@@ -10,10 +10,9 @@ docker-machine start default
 eval $(docker-machine env)
 ```
 
-Bring up the casandra and the kong container
+Bring up the Casandra and Kong containers
 ```
 docker-compose up
-
 ```
 
 Kong is not started right away (as during development an invalid plugin can bring it down and it's handy to see the logs + restart). 
@@ -22,3 +21,6 @@ To bring up Kong you need to connect to the container and execute the command ma
 ```
 docker exec -i -t $(docker ps --filter ancestor=superpixel/kong-plugin-development -q) kong start
 ```
+If this is the first run it will take a minute to bootstrap.
+
+Once finished whenever the files in ```./plugins``` or ```./config``` are changed Kong will be reloaded and the updated plugins loaded in.
