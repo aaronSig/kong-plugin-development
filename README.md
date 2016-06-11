@@ -1,6 +1,5 @@
-
-# Building the plugin(s) and deploying Kong
-An environment for iterating quickly when developing Kong plugins.
+# Kong Plugin Development
+An environment for iterating quickly when developing Kong plugins. Lua, Kong + livereload.
 
 Uses Docker to bring up a Casandra, Kong and sets up Nodemon to watch for changes to kong.yml and any plugins. If changes are detected ```luarocks make``` installs the plugin(s) and Kong is reloaded.
 
